@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人空间 - 极简生活</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        warm: {
+                            50: '#FFF7ED',
+                            100: '#FFEDD5',
+                            200: '#FED7AA',
+                            300: '#FDBA74',
+                            400: '#FB923C',
+                            500: '#F97316',
+                            600: '#EA580C',
+                            700: '#C2410C',
+                            800: '#9A3412',
+                            900: '#7C2D12',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans SC', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-warm-50 text-warm-900 min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        <header class="mb-16 text-center relative">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-warm-200 via-warm-400 to-warm-200 rounded-full"></div>
+            <h1 class="text-4xl font-bold mb-2 text-warm-800">个人空间</h1>
+            <p class="text-xl text-warm-600">简单生活，持续进步</p>
+            
+            <div class="mt-8 inline-block p-1 bg-gradient-to-r from-warm-300 to-warm-500 rounded-full">
+                <div class="bg-warm-50 p-2 rounded-full">
+                    <i class="fas fa-user text-4xl text-warm-500"></i>
+                </div>
+            </div>
+        </header>
+
+        <nav class="mb-12 sticky top-0 bg-warm-50/90 backdrop-blur-sm p-4 rounded-lg shadow-sm z-10">
+            <ul class="flex justify-center space-x-8 text-warm-700">
+                <li><a href="#intro" class="hover:text-warm-500 transition-colors flex items-center"><i class="fas fa-user-circle mr-1 text-warm-400"></i> 个人介绍</a></li>
+                <li><a href="#wealth" class="hover:text-warm-500 transition-colors flex items-center"><i class="fas fa-coins mr-1 text-warm-400"></i> 财富观</a></li>
+                <li><a href="#daily" class="hover:text-warm-500 transition-colors flex items-center"><i class="fas fa-tasks mr-1 text-warm-400"></i> 每日功课</a></li>
+                <li><a href="#quotes" class="hover:text-warm-500 transition-colors flex items-center"><i class="fas fa-quote-right mr-1 text-warm-400"></i> 励志语录</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="intro" class="mb-16 p-8 bg-white rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold mb-6 text-warm-700 border-b pb-2 border-warm-200 flex items-center">
+                    <span class="w-8 h-8 flex items-center justify-center bg-warm-100 rounded-full mr-2 text-warm-600">
+                        <i class="fas fa-user-circle"></i>
+                    </span>
+                    个人介绍
+                </h2>
+                <div class="space-y-4">
+                    <p class="leading-relaxed">我是一名从业十余年的SEO从业者。拥有丰富的SEO和产品运营经验。</p>
+                    <p class="leading-relaxed">多年来，我专注于搜索引擎优化技术，帮助众多网站提升在搜索引擎中的可见性和排名。同时我也热衷于分享SEO知识和经验，帮助更多人了解和掌握SEO技巧。</p>
+                    <p class="leading-relaxed">作为一名产品运营专家，我善于分析用户需求，设计和优化产品功能，并通过数据驱动决策，不断提升产品的用户体验和市场竞争力。</p>
+                </div>
+            </section>
+
+            <section id="wealth" class="mb-16 p-8 bg-white rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold mb-6 text-warm-700 border-b pb-2 border-warm-200 flex items-center">
+                    <span class="w-8 h-8 flex items-center justify-center bg-warm-100 rounded-full mr-2 text-warm-600">
+                        <i class="fas fa-coins"></i>
+                    </span>
+                    财富观
+                </h2>
+                <h3 class="text-xl font-medium mb-4 text-warm-600">普通人如何从生财有术赚钱——把自己当牛马，把AI当工具</h3>
+                <p class="mb-4 leading-relaxed">作为加入生财有术的新手，是一件非常幸福的事情。只要肯下功夫，拿到结果，是一件相对容易的事情。</p>
+                
+                <div class="mb-6 p-6 border border-warm-100 rounded-lg bg-gradient-to-r from-warm-50 to-white">
+                    <h4 class="text-lg font-medium mb-3 text-warm-600 flex items-center">
+                        <i class="fas fa-horse-head mr-2 text-warm-500"></i>牛马精神
+                    </h4>
+                    <p class="mb-3 leading-relaxed">"牛马"指的是勤勤恳恳、踏踏实实工作的人，就像牛和马一样，默默付出，不辞辛劳。</p>
+                    <p class="mb-3 leading-relaxed">在这里，"把自己当牛马"意味着要有踏实肯干的精神，愿意投入时间和精力，不怕吃苦，持续学习和成长。</p>
+                    <p class="leading-relaxed">这是成功的基础，尤其对于没有创业经验的新手来说，更为重要。</p>
+                </div>
+                
+                <div class="mb-6 p-6 border border-warm-100 rounded-lg bg-gradient-to-r from-warm-50 to-white">
+                    <h4 class="text-lg font-medium mb-3 text-warm-600 flex items-center">
+                        <i class="fas fa-robot mr-2 text-warm-500"></i>AI工具
+                    </h4>
+                    <p class="mb-3 leading-relaxed">"工具"则指能帮你提供效率、扩大影响力的各种资源和方法。</p>
+                    <p class="leading-relaxed">"把AI当工具"表示要善于利用现代科技和资源，提升自己的工作效率和创造价值的能力，而不是被动地被技术所替代。</p>
+                </div>
+                
+                <div class="bg-warm-50 p-6 rounded-lg border-l-4 border-warm-400">
+                    <h4 class="text-lg font-medium mb-3 text-warm-600">成功案例</h4>
+                    <p class="mb-3 leading-relaxed">我在前公司有一名下属，是一个产品经理，小女生，她是生财有术里的小透明。</p>
+                    <p class="mb-3 leading-relaxed">从互联网大厂离职后，在生财有术的航海里自学TikTok，月利润达到了10万+。</p>
+                    <p class="leading-relaxed">用好[把自己当牛马，把AI当工具]，生财有术航海里的所有项目，都能拿到结果。</p>
+                </div>
+            </section>
+
+            <section id="daily" class="mb-16 p-8 bg-white rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold mb-6 text-warm-700 border-b pb-2 border-warm-200 flex items-center">
+                    <span class="w-8 h-8 flex items-center justify-center bg-warm-100 rounded-full mr-2 text-warm-600">
+                        <i class="fas fa-tasks"></i>
+                    </span>
+                    每日功课
+                </h2>
+                <p class="mb-6 leading-relaxed">SEO每日功课分为两大部分，分别是SEO练习和代码学习。</p>
+                
+                <div class="mb-8 p-6 border border-warm-100 rounded-lg">
+                    <h3 class="text-xl font-medium mb-4 text-warm-600 flex items-center">
+                        <i class="fas fa-search mr-2 text-warm-500"></i>SEO练习
+                    </h3>
+                    <p class="mb-4 leading-relaxed">每天要多找词，看词，看网站；</p>
+                    <p class="mb-4 leading-relaxed">用到的工具为AITDK，ahrefs工具箱</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <a href="https://ahrefs.com/keyword-difficulty" target="_blank" class="flex items-center p-4 bg-warm-50 rounded-lg hover:bg-warm-100 transition-colors group">
+                            <i class="fas fa-chart-bar mr-3 text-2xl text-warm-500 group-hover:text-warm-600"></i>
+                            <div>
+                                <div class="font-medium text-warm-700">关键词难度分析</div>
+                                <div class="text-sm text-warm-600">查看关键词难度和搜索结果前几名</div>
+                            </div>
+                        </a>
+                        
+                        <a href="https://ahrefs.com/backlink-checker" target="_blank" class="flex items-center p-4 bg-warm-50 rounded-lg hover:bg-warm-100 transition-colors group">
+                            <i class="fas fa-link mr-3 text-2xl text-warm-500 group-hover:text-warm-600"></i>
+                            <div>
+                                <div class="font-medium text-warm-700">外链分析工具</div>
+                                <div class="text-sm text-warm-600">查看一个网站的外链来源</div>
+                            </div>
+                        </a>
+                        
+                        <a href="https://ahrefs.com/keyword-generator" target="_blank" class="flex items-center p-4 bg-warm-50 rounded-lg hover:bg-warm-100 transition-colors group">
+                            <i class="fas fa-key mr-3 text-2xl text-warm-500 group-hover:text-warm-600"></i>
+                            <div>
+                                <div class="font-medium text-warm-700">关键词生成器</div>
+                                <div class="text-sm text-warm-600">查看相关关键词推荐</div>
+                            </div>
+                        </a>
+                        
+                        <a href="https://ahrefs.com/traffic-checker" target="_blank" class="flex items-center p-4 bg-warm-50 rounded-lg hover:bg-warm-100 transition-colors group">
+                            <i class="fas fa-chart-line mr-3 text-2xl text-warm-500 group-hover:text-warm-600"></i>
+                            <div>
+                                <div class="font-medium text-warm-700">流量分析工具</div>
+                                <div class="text-sm text-warm-600">查询网站流量和主要关键词</div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="bg-warm-50 p-4 rounded-lg border-l-2 border-warm-400">
+                        <p class="mb-3 leading-relaxed">持续去看，看100个以上关键词，看1000个以上网站和网页。</p>
+                        <p class="leading-relaxed">看各类网站排行榜，尤其是toolify，前500个网站要如数家珍。</p>
+                    </div>
+                </div>
+                
+                <div class="p-6 border border-warm-100 rounded-lg">
+                    <h3 class="text-xl font-medium mb-4 text-warm-600 flex items-center">
+                        <i class="fas fa-code mr-2 text-warm-500"></i>代码学习
+                    </h3>
+                    <p class="mb-4 leading-relaxed">代码学习部分就是按照路线图学习，包括以下技术栈：</p>
+                    
+                    <div class="flex flex-wrap gap-3 mb-4">
+                        <span class="px-3 py-1 bg-warm-100 text-warm-700 rounded-full flex items-center">
+                            <i class="fab fa-html5 mr-1"></i> HTML
+                        </span>
+                        <span class="px-3 py-1 bg-warm-100 text-warm-700 rounded-full flex items-center">
+                            <i class="fab fa-css3-alt mr-1"></i> CSS
+                        </span>
+                        <span class="px-3 py-1 bg-warm-100 text-warm-700 rounded-full flex items-center">
+                            <i class="fab fa-js mr-1"></i> JavaScript
+                        </span>
+                        <span class="px-3 py-1 bg-warm-100 text-warm-700 rounded-full flex items-center">
+                            <i class="fab fa-react mr-1"></i> React
+                        </span>
+                        <span class="px-3 py-1 bg-warm-100 text-warm-700 rounded-full flex items-center">
+                            <i class="fab fa-node mr-1"></i> Next.JS
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="quotes" class="mb-16 p-8 bg-white rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold mb-6 text-warm-700 border-b pb-2 border-warm-200 flex items-center">
+                    <span class="w-8 h-8 flex items-center justify-center bg-warm-100 rounded-full mr-2 text-warm-600">
+                        <i class="fas fa-quote-right"></i>
+                    </span>
+                    励志语录
+                </h2>
+                <div class="flex flex-col space-y-6">
+                    <div class="bg-gradient-to-r from-warm-50 via-warm-100 to-warm-50 p-6 rounded-lg text-center relative overflow-hidden">
+                        <span class="absolute text-warm-200 opacity-30 text-6xl top-0 left-4">"</span>
+                        <p class="text-xl italic text-warm-700 relative z-10">不积跬步，无以至千里</p>
+                        <span class="absolute text-warm-200 opacity-30 text-6xl bottom-0 right-4">"</span>
+                    </div>
+                    <div class="bg-gradient-to-r from-warm-50 via-warm-100 to-warm-50 p-6 rounded-lg text-center relative overflow-hidden">
+                        <span class="absolute text-warm-200 opacity-30 text-6xl top-0 left-4">"</span>
+                        <p class="text-xl italic text-warm-700 relative z-10">勤则百弊皆除</p>
+                        <span class="absolute text-warm-200 opacity-30 text-6xl bottom-0 right-4">"</span>
+                    </div>
+                    <div class="bg-gradient-to-r from-warm-50 via-warm-100 to-warm-50 p-6 rounded-lg text-center relative overflow-hidden">
+                        <span class="absolute text-warm-200 opacity-30 text-6xl top-0 left-4">"</span>
+                        <p class="text-xl italic text-warm-700 relative z-10">日精进</p>
+                        <span class="absolute text-warm-200 opacity-30 text-6xl bottom-0 right-4">"</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center text-warm-600 mt-16 pt-8 border-t border-warm-200">
+            <div class="mb-4">
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="text-warm-400 hover:text-warm-600 transition-colors">
+                        <i class="fab fa-weixin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-warm-400 hover:text-warm-600 transition-colors">
+                        <i class="fab fa-weibo text-xl"></i>
+                    </a>
+                    <a href="#" class="text-warm-400 hover:text-warm-600 transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-warm-400 hover:text-warm-600 transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <p class="text-sm">© 2023 个人空间 | 简单生活，持续进步</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
