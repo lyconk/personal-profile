@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人空间 - 极简生活</title>
+    <title>个人空间 - 未来视界</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -23,9 +23,17 @@
                             800: '#9A3412',
                             900: '#7C2D12',
                         },
+                        neon: {
+                            blue: '#4361EE',
+                            purple: '#7209B7',
+                            pink: '#F72585',
+                            teal: '#4CC9F0'
+                        },
+                        dark: '#0a0a0a'
                     },
                     fontFamily: {
-                        sans: ['Noto Sans SC', 'sans-serif'],
+                        sans: ['Quicksand', 'Noto Sans SC', 'sans-serif'],
+                        display: ['Orbitron', 'Noto Sans SC', 'sans-serif'],
                     },
                 }
             }
@@ -33,35 +41,46 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-warm-50 text-warm-900 min-h-screen">
-    <div class="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
-        <header class="mb-16 text-center relative">
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-warm-200 via-warm-400 to-warm-200 rounded-full"></div>
-            <h1 class="text-4xl font-bold mb-2 text-warm-800">个人空间</h1>
-            <p class="text-xl text-warm-600">简单生活，持续进步</p>
+<body class="bg-dark text-warm-50 min-h-screen">
+    <!-- 背景动画元素 -->
+    <div id="particles-js" class="fixed inset-0 z-0 opacity-20"></div>
+    
+    <div class="relative z-10 max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        <header class="mb-20 text-center relative">
+            <!-- 高科技装饰线 -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-1 bg-gradient-to-r from-neon-pink via-warm-500 to-neon-blue rounded-full"></div>
             
-            <div class="mt-8 inline-block p-1 bg-gradient-to-r from-warm-300 to-warm-500 rounded-full">
-                <div class="bg-warm-50 p-2 rounded-full">
-                    <i class="fas fa-user text-4xl text-warm-500"></i>
+            <h1 class="text-4xl font-bold mb-2 text-warm-300 font-display tracking-wider">
+                <span class="inline-block transform hover:scale-105 transition-transform duration-300">个人空间</span>
+            </h1>
+            <p class="text-xl text-warm-400 mb-6">简单生活，持续进步</p>
+            
+            <div class="relative mt-8 inline-block p-2 rounded-full glow-on-hover">
+                <div class="flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-warm-600 to-neon-blue p-0.5">
+                    <div class="bg-dark rounded-full w-full h-full flex items-center justify-center">
+                        <i class="fas fa-user text-4xl text-warm-400"></i>
+                    </div>
                 </div>
+                <!-- 装饰光环 -->
+                <div class="absolute inset-0 rounded-full border border-warm-500 animate-ping opacity-20"></div>
             </div>
         </header>
 
-        <nav class="mb-12 sticky top-0 bg-warm-50/90 backdrop-blur-sm p-4 rounded-lg shadow-sm z-10">
-            <ul class="flex justify-center space-x-8 text-warm-700">
-                <li><a href="#intro" class="hover:text-warm-500 transition-colors flex items-center"><i class="fas fa-user-circle mr-1 text-warm-400"></i> 个人介绍</a></li>
-                <li><a href="#wealth" class="hover:text-warm-500 transition-colors flex items-center"><i class="fas fa-coins mr-1 text-warm-400"></i> 财富观</a></li>
-                <li><a href="#daily" class="hover:text-warm-500 transition-colors flex items-center"><i class="fas fa-tasks mr-1 text-warm-400"></i> 每日功课</a></li>
-                <li><a href="#quotes" class="hover:text-warm-500 transition-colors flex items-center"><i class="fas fa-quote-right mr-1 text-warm-400"></i> 励志语录</a></li>
-                <li><a href="https://webpilot.info/" target="_blank" class="hover:text-warm-500 transition-colors flex items-center"><i class="fas fa-globe mr-1 text-warm-400"></i> WebPilot</a></li>
+        <nav class="mb-12 sticky top-4 bg-dark/80 backdrop-blur-lg p-4 rounded-xl shadow-lg z-50">
+            <ul class="flex justify-center flex-wrap gap-2 sm:gap-4 text-warm-200">
+                <li><a href="#intro" class="hover:text-warm-400 px-3 py-2 rounded-lg transition-all hover:bg-warm-900/20 flex items-center hover-3d"><i class="fas fa-user-circle mr-1 text-warm-400"></i> 个人介绍</a></li>
+                <li><a href="#wealth" class="hover:text-warm-400 px-3 py-2 rounded-lg transition-all hover:bg-warm-900/20 flex items-center hover-3d"><i class="fas fa-coins mr-1 text-warm-400"></i> 财富观</a></li>
+                <li><a href="#daily" class="hover:text-warm-400 px-3 py-2 rounded-lg transition-all hover:bg-warm-900/20 flex items-center hover-3d"><i class="fas fa-tasks mr-1 text-warm-400"></i> 每日功课</a></li>
+                <li><a href="#quotes" class="hover:text-warm-400 px-3 py-2 rounded-lg transition-all hover:bg-warm-900/20 flex items-center hover-3d"><i class="fas fa-quote-right mr-1 text-warm-400"></i> 励志语录</a></li>
+                <li><a href="https://webpilot.info/" target="_blank" class="hover:text-warm-400 px-3 py-2 rounded-lg transition-all hover:bg-warm-900/20 flex items-center hover-3d"><i class="fas fa-globe mr-1 text-warm-400"></i> WebPilot</a></li>
             </ul>
         </nav>
 
         <main>
-            <section id="intro" class="mb-16 p-8 bg-white rounded-lg shadow-md">
-                <h2 class="text-2xl font-semibold mb-6 text-warm-700 border-b pb-2 border-warm-200 flex items-center">
-                    <span class="w-8 h-8 flex items-center justify-center bg-warm-100 rounded-full mr-2 text-warm-600">
-                        <i class="fas fa-user-circle"></i>
+            <section id="intro" class="mb-16 p-8 bg-white/5 backdrop-blur-md rounded-xl shadow-xl beam-effect text-warm-100">
+                <h2 class="text-2xl font-semibold mb-6 text-warm-300 border-b pb-2 border-warm-700/50 flex items-center font-display">
+                    <span class="w-10 h-10 flex items-center justify-center bg-gradient-to-br from-warm-700 to-neon-blue rounded-lg mr-3 shadow-lg">
+                        <i class="fas fa-user-circle text-warm-50"></i>
                     </span>
                     个人介绍
                 </h2>
@@ -72,197 +91,197 @@
                 </div>
             </section>
 
-            <section id="wealth" class="mb-16 p-8 bg-white rounded-lg shadow-md">
-                <h2 class="text-2xl font-semibold mb-6 text-warm-700 border-b pb-2 border-warm-200 flex items-center">
-                    <span class="w-8 h-8 flex items-center justify-center bg-warm-100 rounded-full mr-2 text-warm-600">
-                        <i class="fas fa-coins"></i>
+            <section id="wealth" class="mb-16 p-8 bg-white/5 backdrop-blur-md rounded-xl shadow-xl beam-effect text-warm-100">
+                <h2 class="text-2xl font-semibold mb-6 text-warm-300 border-b pb-2 border-warm-700/50 flex items-center font-display">
+                    <span class="w-10 h-10 flex items-center justify-center bg-gradient-to-br from-warm-700 to-neon-blue rounded-lg mr-3 shadow-lg">
+                        <i class="fas fa-coins text-warm-50"></i>
                     </span>
                     财富观
                 </h2>
-                <h3 class="text-xl font-medium mb-4 text-warm-600">AI时代的财富杠杆：从工具到合伙人</h3>
+                <h3 class="text-xl font-medium mb-4 text-warm-400 font-display">AI时代的财富杠杆：从工具到合伙人</h3>
                 <p class="mb-4 leading-relaxed">主要围绕如何利用AI技术在不同阶段实现商业价值最大化，从新手到资本家逐级进阶的策略展开，具体分为三个核心部分：</p>
                 
-                <div class="mb-6 p-6 border border-warm-100 rounded-lg bg-gradient-to-r from-warm-50 to-white">
-                    <h4 class="text-lg font-medium mb-3 text-warm-600 flex items-center">
+                <div class="mb-6 p-6 border border-warm-800/50 rounded-lg bg-gradient-to-r from-warm-900/30 to-dark hover-float glow-on-hover">
+                    <h4 class="text-lg font-medium mb-3 text-warm-300 flex items-center font-display">
                         <i class="fas fa-horse-head mr-2 text-warm-500"></i>Part 1：新手阶段——「把自己当牛马，把AI当工具」
                     </h4>
-                    <p class="mb-3 leading-relaxed"><strong>核心逻辑</strong>：通过勤奋执行（牛马精神）+AI效率工具，快速落地生财有术的副业项目。</p>
-                    <p class="mb-3 leading-relaxed"><strong>具体方法</strong>：</p>
+                    <p class="mb-3 leading-relaxed"><strong class="text-warm-300">核心逻辑</strong>：通过勤奋执行（牛马精神）+AI效率工具，快速落地生财有术的副业项目。</p>
+                    <p class="mb-3 leading-relaxed"><strong class="text-warm-300">具体方法</strong>：</p>
                     <ul class="list-disc list-inside mb-3 ml-4 space-y-2">
-                        <li class="leading-relaxed"><strong>高强度执行</strong>：例如注册15个小红书账号并维护，亲力亲为完成基础工作。</li>
-                        <li class="leading-relaxed"><strong>AI辅助提效</strong>：用AI解决批量内容创作、账号管理等重复性任务（如生成文案、视频剪辑），突破人力时间限制。</li>
+                        <li class="leading-relaxed"><strong class="text-warm-300">高强度执行</strong>：例如注册15个小红书账号并维护，亲力亲为完成基础工作。</li>
+                        <li class="leading-relaxed"><strong class="text-warm-300">AI辅助提效</strong>：用AI解决批量内容创作、账号管理等重复性任务（如生成文案、视频剪辑），突破人力时间限制。</li>
                     </ul>
-                    <p class="mb-3 leading-relaxed"><strong>案例</strong>：</p>
+                    <p class="mb-3 leading-relaxed"><strong class="text-warm-300">案例</strong>：</p>
                     <ul class="list-disc list-inside mb-3 ml-4 space-y-2">
                         <li class="leading-relaxed">新手通过航海项目（如TikTok、小红书）月利润达10万+</li>
                         <li class="leading-relaxed">圈友@代一7天跑通AI手绘漫画风向标，赚取1000元，验证了"流量制造者"模式的可行性</li>
                     </ul>
-                    <p class="leading-relaxed"><strong>关键点</strong>：先通过体力积累经验，再用AI放大规模。</p>
+                    <p class="leading-relaxed"><strong class="text-warm-300">关键点</strong>：先通过体力积累经验，再用AI放大规模。</p>
                 </div>
                 
-                <div class="mb-6 p-6 border border-warm-100 rounded-lg bg-gradient-to-r from-warm-50 to-white">
-                    <h4 class="text-lg font-medium mb-3 text-warm-600 flex items-center">
+                <div class="mb-6 p-6 border border-warm-800/50 rounded-lg bg-gradient-to-r from-warm-900/30 to-dark hover-float glow-on-hover">
+                    <h4 class="text-lg font-medium mb-3 text-warm-300 flex items-center font-display">
                         <i class="fas fa-robot mr-2 text-warm-500"></i>Part 2：进阶阶段——「把自己当工具，把AI当牛马」
                     </h4>
-                    <p class="mb-3 leading-relaxed"><strong>核心逻辑</strong>：角色反转——人主导策略与资源整合，AI承担执行层"牛马"工作。</p>
-                    <p class="mb-3 leading-relaxed"><strong>方法论</strong>：</p>
+                    <p class="mb-3 leading-relaxed"><strong class="text-warm-300">核心逻辑</strong>：角色反转——人主导策略与资源整合，AI承担执行层"牛马"工作。</p>
+                    <p class="mb-3 leading-relaxed"><strong class="text-warm-300">方法论</strong>：</p>
                     <ul class="list-disc list-inside mb-3 ml-4 space-y-2">
-                        <li class="leading-relaxed"><strong>人做AI做不到的事</strong>：如内容质量把控（如小鹅的AI写作生意需专业写手协同）、构建协作网络、建立信任声誉。</li>
-                        <li class="leading-relaxed"><strong>AI规模化执行</strong>：将重复劳动（如批量内容生成）交给AI，人专注于商业模式设计和放大。</li>
+                        <li class="leading-relaxed"><strong class="text-warm-300">人做AI做不到的事</strong>：如内容质量把控（如小鹅的AI写作生意需专业写手协同）、构建协作网络、建立信任声誉。</li>
+                        <li class="leading-relaxed"><strong class="text-warm-300">AI规模化执行</strong>：将重复劳动（如批量内容生成）交给AI，人专注于商业模式设计和放大。</li>
                     </ul>
-                    <p class="mb-3 leading-relaxed"><strong>案例</strong>：</p>
+                    <p class="mb-3 leading-relaxed"><strong class="text-warm-300">案例</strong>：</p>
                     <ul class="list-disc list-inside mb-3 ml-4 space-y-2">
                         <li class="leading-relaxed">小鹅的AI写作团队通过"专业写手+AI"混合模式，形成行业壁垒</li>
                         <li class="leading-relaxed">强调"比AI更凶"——用人的判断力和组织能力创造差异化价值</li>
                     </ul>
-                    <p class="leading-relaxed"><strong>关键点</strong>：找到蓝海市场（如需求强但供给弱的领域），用人的智慧碾压低效竞争。</p>
+                    <p class="leading-relaxed"><strong class="text-warm-300">关键点</strong>：找到蓝海市场（如需求强但供给弱的领域），用人的智慧碾压低效竞争。</p>
                 </div>
                 
-                <div class="mb-6 p-6 border border-warm-100 rounded-lg bg-gradient-to-r from-warm-50 to-white">
-                    <h4 class="text-lg font-medium mb-3 text-warm-600 flex items-center">
+                <div class="mb-6 p-6 border border-warm-800/50 rounded-lg bg-gradient-to-r from-warm-900/30 to-dark hover-float glow-on-hover">
+                    <h4 class="text-lg font-medium mb-3 text-warm-300 flex items-center font-display">
                         <i class="fas fa-crown mr-2 text-warm-500"></i>Part 3：资本家阶段——「组建牛马与AI的混合军团」
                     </h4>
-                    <p class="mb-3 leading-relaxed"><strong>核心逻辑</strong>：企业家通过组织力整合"人力+AI"资源，专注顶层设计。</p>
-                    <p class="mb-3 leading-relaxed"><strong>方法论</strong>：</p>
+                    <p class="mb-3 leading-relaxed"><strong class="text-warm-300">核心逻辑</strong>：企业家通过组织力整合"人力+AI"资源，专注顶层设计。</p>
+                    <p class="mb-3 leading-relaxed"><strong class="text-warm-300">方法论</strong>：</p>
                     <ul class="list-disc list-inside mb-3 ml-4 space-y-2">
-                        <li class="leading-relaxed"><strong>老板"闲"下来</strong>：如王紫菜、沈小善等成功案例，通过脱离日常执行，专注洞察机会与优化SOP。</li>
-                        <li class="leading-relaxed"><strong>极致SOP+混合团队</strong>：从生财有术精华帖中孵化项目；招聘人力（如HR、兼职）与AI工具协同，规模化执行。</li>
+                        <li class="leading-relaxed"><strong class="text-warm-300">老板"闲"下来</strong>：如王紫菜、沈小善等成功案例，通过脱离日常执行，专注洞察机会与优化SOP。</li>
+                        <li class="leading-relaxed"><strong class="text-warm-300">极致SOP+混合团队</strong>：从生财有术精华帖中孵化项目；招聘人力（如HR、兼职）与AI工具协同，规模化执行。</li>
                     </ul>
-                    <p class="mb-3 leading-relaxed"><strong>案例</strong>：某随机精华帖衍生项目年营收数百万，毛利70%~80%。</p>
-                    <p class="leading-relaxed"><strong>社会价值升级</strong>：从"找好工作"到"提供好工作"，甚至为AI设计"工作岗位"。</p>
+                    <p class="mb-3 leading-relaxed"><strong class="text-warm-300">案例</strong>：某随机精华帖衍生项目年营收数百万，毛利70%~80%。</p>
+                    <p class="leading-relaxed"><strong class="text-warm-300">社会价值升级</strong>：从"找好工作"到"提供好工作"，甚至为AI设计"工作岗位"。</p>
                 </div>
                 
-                <div class="bg-warm-50 p-6 rounded-lg border-l-4 border-warm-400">
-                    <h4 class="text-lg font-medium mb-3 text-warm-600">AI时代的生财进阶路径</h4>
+                <div class="bg-gradient-to-r from-warm-900/50 to-neon-blue/10 p-6 rounded-lg border-l-4 border-warm-500 hover-float">
+                    <h4 class="text-lg font-medium mb-3 text-warm-300 font-display">AI时代的生财进阶路径</h4>
                     <ul class="list-disc list-inside mb-3 ml-4 space-y-2">
-                        <li class="leading-relaxed"><strong>新手</strong>：体力+AI工具 → 快速验证项目</li>
-                        <li class="leading-relaxed"><strong>聪明人</strong>：策略+AI执行 → 规模化变现</li>
-                        <li class="leading-relaxed"><strong>资本家</strong>：组织力+AI/人力混合 → 系统性放大机会</li>
+                        <li class="leading-relaxed"><strong class="text-warm-300">新手</strong>：体力+AI工具 → 快速验证项目</li>
+                        <li class="leading-relaxed"><strong class="text-warm-300">聪明人</strong>：策略+AI执行 → 规模化变现</li>
+                        <li class="leading-relaxed"><strong class="text-warm-300">资本家</strong>：组织力+AI/人力混合 → 系统性放大机会</li>
                     </ul>
-                    <p class="mb-3 leading-relaxed"><strong>核心洞察</strong>：</p>
+                    <p class="mb-3 leading-relaxed"><strong class="text-warm-300">核心洞察</strong>：</p>
                     <ul class="list-disc list-inside mb-3 ml-4 space-y-2">
                         <li class="leading-relaxed">AI是杠杆，但人的判断力、协作能力和商业模式设计不可替代</li>
                         <li class="leading-relaxed">生财有术的价值在于提供可复制的项目模板（航海、风向标）与组织方法论</li>
                     </ul>
-                    <p class="leading-relaxed"><strong>终极目标</strong>：通过AI与人的协同，实现从"工具使用者"到"资源组织者"的跃迁，最终达成百倍回报。</p>
+                    <p class="leading-relaxed"><strong class="text-warm-300">终极目标</strong>：通过AI与人的协同，实现从"工具使用者"到"资源组织者"的跃迁，最终达成百倍回报。</p>
                 </div>
             </section>
 
-            <section id="daily" class="mb-16 p-8 bg-white rounded-lg shadow-md">
-                <h2 class="text-2xl font-semibold mb-6 text-warm-700 border-b pb-2 border-warm-200 flex items-center">
-                    <span class="w-8 h-8 flex items-center justify-center bg-warm-100 rounded-full mr-2 text-warm-600">
-                        <i class="fas fa-tasks"></i>
+            <section id="daily" class="mb-16 p-8 bg-white/5 backdrop-blur-md rounded-xl shadow-xl beam-effect text-warm-100">
+                <h2 class="text-2xl font-semibold mb-6 text-warm-300 border-b pb-2 border-warm-700/50 flex items-center font-display">
+                    <span class="w-10 h-10 flex items-center justify-center bg-gradient-to-br from-warm-700 to-neon-blue rounded-lg mr-3 shadow-lg">
+                        <i class="fas fa-tasks text-warm-50"></i>
                     </span>
                     每日功课
                 </h2>
                 <p class="mb-6 leading-relaxed">SEO每日功课分为两大部分，分别是SEO练习和代码学习。</p>
                 
-                <div class="mb-8 p-6 border border-warm-100 rounded-lg">
-                    <h3 class="text-xl font-medium mb-4 text-warm-600 flex items-center">
+                <div class="mb-8 p-6 border border-warm-800/50 rounded-lg bg-gradient-to-r from-warm-900/30 to-dark hover-float">
+                    <h3 class="text-xl font-medium mb-4 text-warm-400 flex items-center font-display">
                         <i class="fas fa-search mr-2 text-warm-500"></i>SEO练习
                     </h3>
                     <p class="mb-4 leading-relaxed">每天要多找词，看词，看网站；</p>
                     <p class="mb-4 leading-relaxed">用到的工具为AITDK，ahrefs工具箱</p>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                        <a href="https://ahrefs.com/keyword-difficulty" target="_blank" class="flex items-center p-4 bg-warm-50 rounded-lg hover:bg-warm-100 transition-colors group">
-                            <i class="fas fa-chart-bar mr-3 text-2xl text-warm-500 group-hover:text-warm-600"></i>
+                        <a href="https://ahrefs.com/keyword-difficulty" target="_blank" class="flex items-center p-4 bg-warm-900/40 rounded-lg hover:bg-warm-800/40 transition-colors group hover-3d">
+                            <i class="fas fa-chart-bar mr-3 text-2xl text-warm-500 group-hover:text-warm-400"></i>
                             <div>
-                                <div class="font-medium text-warm-700">关键词难度分析</div>
-                                <div class="text-sm text-warm-600">查看关键词难度和搜索结果前几名</div>
+                                <div class="font-medium text-warm-300 group-hover:text-warm-200">关键词难度分析</div>
+                                <div class="text-sm text-warm-400 group-hover:text-warm-300">查看关键词难度和搜索结果前几名</div>
                             </div>
                         </a>
                         
-                        <a href="https://ahrefs.com/backlink-checker" target="_blank" class="flex items-center p-4 bg-warm-50 rounded-lg hover:bg-warm-100 transition-colors group">
-                            <i class="fas fa-link mr-3 text-2xl text-warm-500 group-hover:text-warm-600"></i>
+                        <a href="https://ahrefs.com/backlink-checker" target="_blank" class="flex items-center p-4 bg-warm-900/40 rounded-lg hover:bg-warm-800/40 transition-colors group hover-3d">
+                            <i class="fas fa-link mr-3 text-2xl text-warm-500 group-hover:text-warm-400"></i>
                             <div>
-                                <div class="font-medium text-warm-700">外链分析工具</div>
-                                <div class="text-sm text-warm-600">查看一个网站的外链来源</div>
+                                <div class="font-medium text-warm-300 group-hover:text-warm-200">外链分析工具</div>
+                                <div class="text-sm text-warm-400 group-hover:text-warm-300">查看一个网站的外链来源</div>
                             </div>
                         </a>
                         
-                        <a href="https://ahrefs.com/keyword-generator" target="_blank" class="flex items-center p-4 bg-warm-50 rounded-lg hover:bg-warm-100 transition-colors group">
-                            <i class="fas fa-key mr-3 text-2xl text-warm-500 group-hover:text-warm-600"></i>
+                        <a href="https://ahrefs.com/keyword-generator" target="_blank" class="flex items-center p-4 bg-warm-900/40 rounded-lg hover:bg-warm-800/40 transition-colors group hover-3d">
+                            <i class="fas fa-key mr-3 text-2xl text-warm-500 group-hover:text-warm-400"></i>
                             <div>
-                                <div class="font-medium text-warm-700">关键词生成器</div>
-                                <div class="text-sm text-warm-600">查看相关关键词推荐</div>
+                                <div class="font-medium text-warm-300 group-hover:text-warm-200">关键词生成器</div>
+                                <div class="text-sm text-warm-400 group-hover:text-warm-300">查看相关关键词推荐</div>
                             </div>
                         </a>
                         
-                        <a href="https://ahrefs.com/traffic-checker" target="_blank" class="flex items-center p-4 bg-warm-50 rounded-lg hover:bg-warm-100 transition-colors group">
-                            <i class="fas fa-chart-line mr-3 text-2xl text-warm-500 group-hover:text-warm-600"></i>
+                        <a href="https://ahrefs.com/traffic-checker" target="_blank" class="flex items-center p-4 bg-warm-900/40 rounded-lg hover:bg-warm-800/40 transition-colors group hover-3d">
+                            <i class="fas fa-chart-line mr-3 text-2xl text-warm-500 group-hover:text-warm-400"></i>
                             <div>
-                                <div class="font-medium text-warm-700">流量分析工具</div>
-                                <div class="text-sm text-warm-600">查询网站流量和主要关键词</div>
+                                <div class="font-medium text-warm-300 group-hover:text-warm-200">流量分析工具</div>
+                                <div class="text-sm text-warm-400 group-hover:text-warm-300">查询网站流量和主要关键词</div>
                             </div>
                         </a>
                     </div>
                     
-                    <div class="bg-warm-50 p-4 rounded-lg border-l-2 border-warm-400">
+                    <div class="bg-warm-900/40 p-4 rounded-lg border-l-2 border-warm-500 pulse-border">
                         <p class="mb-3 leading-relaxed">持续去看，看100个以上关键词，看1000个以上网站和网页。</p>
                         <p class="leading-relaxed">看各类网站排行榜，尤其是toolify，前500个网站要如数家珍。</p>
                     </div>
                 </div>
                 
-                <div class="p-6 border border-warm-100 rounded-lg">
-                    <h3 class="text-xl font-medium mb-4 text-warm-600 flex items-center">
+                <div class="p-6 border border-warm-800/50 rounded-lg bg-gradient-to-r from-warm-900/30 to-dark hover-float">
+                    <h3 class="text-xl font-medium mb-4 text-warm-400 flex items-center font-display">
                         <i class="fas fa-code mr-2 text-warm-500"></i>代码学习
                     </h3>
                     <p class="mb-4 leading-relaxed">代码学习部分就是按照路线图学习，包括以下技术栈：</p>
                     
                     <div class="flex flex-wrap gap-3 mb-4">
-                        <span class="px-3 py-1 bg-warm-100 text-warm-700 rounded-full flex items-center">
-                            <i class="fab fa-html5 mr-1"></i> HTML
+                        <span class="px-3 py-1 bg-warm-900/50 text-warm-300 rounded-full flex items-center hover-float">
+                            <i class="fab fa-html5 mr-1 text-warm-500"></i> HTML
                         </span>
-                        <span class="px-3 py-1 bg-warm-100 text-warm-700 rounded-full flex items-center">
-                            <i class="fab fa-css3-alt mr-1"></i> CSS
+                        <span class="px-3 py-1 bg-warm-900/50 text-warm-300 rounded-full flex items-center hover-float">
+                            <i class="fab fa-css3-alt mr-1 text-warm-500"></i> CSS
                         </span>
-                        <span class="px-3 py-1 bg-warm-100 text-warm-700 rounded-full flex items-center">
-                            <i class="fab fa-js mr-1"></i> JavaScript
+                        <span class="px-3 py-1 bg-warm-900/50 text-warm-300 rounded-full flex items-center hover-float">
+                            <i class="fab fa-js mr-1 text-warm-500"></i> JavaScript
                         </span>
-                        <span class="px-3 py-1 bg-warm-100 text-warm-700 rounded-full flex items-center">
-                            <i class="fab fa-react mr-1"></i> React
+                        <span class="px-3 py-1 bg-warm-900/50 text-warm-300 rounded-full flex items-center hover-float">
+                            <i class="fab fa-react mr-1 text-warm-500"></i> React
                         </span>
-                        <span class="px-3 py-1 bg-warm-100 text-warm-700 rounded-full flex items-center">
-                            <i class="fab fa-node mr-1"></i> Next.JS
+                        <span class="px-3 py-1 bg-warm-900/50 text-warm-300 rounded-full flex items-center hover-float">
+                            <i class="fab fa-node mr-1 text-warm-500"></i> Next.JS
                         </span>
                     </div>
                 </div>
             </section>
 
-            <section id="quotes" class="mb-16 p-8 bg-white rounded-lg shadow-md">
-                <h2 class="text-2xl font-semibold mb-6 text-warm-700 border-b pb-2 border-warm-200 flex items-center">
-                    <span class="w-8 h-8 flex items-center justify-center bg-warm-100 rounded-full mr-2 text-warm-600">
-                        <i class="fas fa-quote-right"></i>
+            <section id="quotes" class="mb-16 p-8 bg-white/5 backdrop-blur-md rounded-xl shadow-xl beam-effect text-warm-100">
+                <h2 class="text-2xl font-semibold mb-6 text-warm-300 border-b pb-2 border-warm-700/50 flex items-center font-display">
+                    <span class="w-10 h-10 flex items-center justify-center bg-gradient-to-br from-warm-700 to-neon-blue rounded-lg mr-3 shadow-lg">
+                        <i class="fas fa-quote-right text-warm-50"></i>
                     </span>
                     励志语录
                 </h2>
                 <div class="flex flex-col space-y-6">
-                    <div class="bg-gradient-to-r from-warm-50 via-warm-100 to-warm-50 p-6 rounded-lg text-center relative overflow-hidden">
-                        <span class="absolute text-warm-200 opacity-30 text-6xl top-0 left-4">"</span>
-                        <p class="text-xl italic text-warm-700 relative z-10">不积跬步，无以至千里</p>
-                        <span class="absolute text-warm-200 opacity-30 text-6xl bottom-0 right-4">"</span>
+                    <div class="bg-gradient-to-r from-warm-900/40 via-neon-blue/5 to-warm-900/40 p-6 rounded-lg text-center relative overflow-hidden hover-float glow-on-hover">
+                        <span class="absolute text-warm-800 opacity-20 text-8xl top-0 left-4 font-display">"</span>
+                        <p class="text-xl italic text-warm-300 relative z-10 font-display tracking-wider">不积跬步，无以至千里</p>
+                        <span class="absolute text-warm-800 opacity-20 text-8xl bottom-0 right-4 font-display">"</span>
                     </div>
-                    <div class="bg-gradient-to-r from-warm-50 via-warm-100 to-warm-50 p-6 rounded-lg text-center relative overflow-hidden">
-                        <span class="absolute text-warm-200 opacity-30 text-6xl top-0 left-4">"</span>
-                        <p class="text-xl italic text-warm-700 relative z-10">勤则百弊皆除</p>
-                        <span class="absolute text-warm-200 opacity-30 text-6xl bottom-0 right-4">"</span>
+                    <div class="bg-gradient-to-r from-warm-900/40 via-neon-blue/5 to-warm-900/40 p-6 rounded-lg text-center relative overflow-hidden hover-float glow-on-hover">
+                        <span class="absolute text-warm-800 opacity-20 text-8xl top-0 left-4 font-display">"</span>
+                        <p class="text-xl italic text-warm-300 relative z-10 font-display tracking-wider">勤则百弊皆除</p>
+                        <span class="absolute text-warm-800 opacity-20 text-8xl bottom-0 right-4 font-display">"</span>
                     </div>
-                    <div class="bg-gradient-to-r from-warm-50 via-warm-100 to-warm-50 p-6 rounded-lg text-center relative overflow-hidden">
-                        <span class="absolute text-warm-200 opacity-30 text-6xl top-0 left-4">"</span>
-                        <p class="text-xl italic text-warm-700 relative z-10">日精进</p>
-                        <span class="absolute text-warm-200 opacity-30 text-6xl bottom-0 right-4">"</span>
+                    <div class="bg-gradient-to-r from-warm-900/40 via-neon-blue/5 to-warm-900/40 p-6 rounded-lg text-center relative overflow-hidden hover-float glow-on-hover">
+                        <span class="absolute text-warm-800 opacity-20 text-8xl top-0 left-4 font-display">"</span>
+                        <p class="text-xl italic text-warm-300 relative z-10 font-display tracking-wider">日精进</p>
+                        <span class="absolute text-warm-800 opacity-20 text-8xl bottom-0 right-4 font-display">"</span>
                     </div>
                 </div>
             </section>
         </main>
 
-        <footer class="text-center text-warm-600 mt-16 pt-8 border-t border-warm-200">
-        
+        <footer class="text-center text-warm-400 mt-16 pt-8 border-t border-warm-800/50">
             <p class="text-sm">© 2025 个人空间 | 简单生活，持续进步</p>
         </footer>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html> 

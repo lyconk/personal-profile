@@ -1,123 +1,266 @@
-/* 导入Noto Sans SC字体 */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+/* 导入黑客帝国风格字体 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Share+Tech+Mono&family=Orbitron:wght@400;500;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 /* 基础样式 */
 :root {
-  --color-warm-50: #FFF7ED;
-  --color-warm-100: #FFEDD5;
-  --color-warm-200: #FED7AA;
-  --color-warm-300: #FDBA74;
-  --color-warm-400: #FB923C;
-  --color-warm-500: #F97316;
-  --color-warm-600: #EA580C;
-  --color-warm-700: #C2410C;
-  --color-warm-800: #9A3412;
-  --color-warm-900: #7C2D12;
+  /* 黑客帝国色系 */
+  --matrix-dark: #0c0c0c;
+  --matrix-darker: #050505;
+  --matrix-black: #000000;
+  --matrix-green: #00ff41;
+  --matrix-green-dim: #0d5f1f;
+  --matrix-green-bright: #39ff14;
+  --matrix-blue: #0b5394;
+  --matrix-cyan: #00FFE8;
+  --matrix-code: #22b455;
+  --matrix-red: #ff0000;
+  
+  /* 原有暖色调备用 */
+  --color-warm-50: #0f1f0c;
+  --color-warm-100: #132814;
+  --color-warm-200: #193e1a;
+  --color-warm-300: #1e501f;
+  --color-warm-400: #22b455;
+  --color-warm-500: #00ff41;
+  --color-warm-600: #39ff14;
+  --color-warm-700: #00ff88;
+  --color-warm-800: #00ffe8;
+  --color-warm-900: #ffffff;
+  
+  /* 代码雨参数 */
+  --matrix-rain-speed: 15s;
+  --matrix-glow: 0 0 10px #00ff41, 0 0 20px rgba(0, 255, 65, 0.5);
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* 为固定导航栏预留空间 */
+  scroll-padding-top: 80px;
 }
 
 body {
-  font-family: 'Noto Sans SC', sans-serif;
+  font-family: 'Share Tech Mono', 'Noto Sans SC', monospace;
   line-height: 1.6;
-  color: var(--color-warm-900);
-  background-color: var(--color-warm-50);
-  background-image: 
-    radial-gradient(circle at 25% 15%, rgba(253, 186, 116, 0.1) 0%, transparent 40%),
-    radial-gradient(circle at 75% 85%, rgba(249, 115, 22, 0.05) 0%, transparent 40%);
-  background-attachment: fixed;
-  opacity: 0;
-  animation: fadeIn 0.8s ease forwards;
+  color: var(--matrix-green);
+  background-color: var(--matrix-black);
+  position: relative;
+  overflow-x: hidden;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* 矩阵代码雨效果 */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 75%, rgba(0,0,0,0.8) 100%), 
+              url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%2300ff41' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  opacity: 0.15;
+  z-index: -1;
 }
 
 /* 平滑渐变效果 */
 a, button {
   transition: all 0.3s ease;
-}
-
-/* 卡片悬浮效果 */
-section {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(254, 215, 170, 0.3);
   position: relative;
   overflow: hidden;
 }
 
-section:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(234, 88, 12, 0.08);
+/* 卡片矩阵风格 */
+section {
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  border: 1px solid var(--matrix-green-dim);
+  background: rgba(0, 15, 2, 0.7);
+  backdrop-filter: blur(5px);
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 
+    0 0 10px rgba(0, 255, 65, 0.1),
+    0 0 5px rgba(0, 255, 65, 0.05);
 }
 
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, 
+    transparent 48%, 
+    var(--matrix-green-dim) 49%, 
+    var(--matrix-green-dim) 51%, 
+    transparent 52%);
+  background-size: 6px 6px;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+section:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 0 15px rgba(0, 255, 65, 0.15),
+    0 0 8px rgba(0, 255, 65, 0.1);
+  border-color: var(--matrix-green);
+}
+
+/* 绿色扫描线效果 */
 section::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-warm-200), var(--color-warm-400), var(--color-warm-200));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
+  height: 2px;
+  background: var(--matrix-green);
+  box-shadow: var(--matrix-glow);
+  animation: scanline 3s linear infinite;
+  opacity: 0;
+  transform-origin: top;
 }
 
 section:hover::after {
-  transform: scaleX(1);
+  opacity: 0.7;
 }
 
-/* 导航栏效果 */
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(2000px);
+    opacity: 0;
+  }
+}
+
+/* 标题矩阵风格 */
+h1, h2, h3, h4 {
+  font-family: 'Share Tech Mono', 'Noto Sans SC', monospace;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h2::before {
+  content: ">";
+  margin-right: 8px;
+  color: var(--matrix-green-bright);
+}
+
+h3::before {
+  content: ">>";
+  margin-right: 8px;
+  font-size: 0.8em;
+  color: var(--matrix-green-bright);
+}
+
+/* 导航栏数字雨风格 */
 nav {
   transition: all 0.3s ease;
-  border: 1px solid rgba(254, 215, 170, 0.3);
-  backdrop-filter: blur(8px);
+  border: 1px solid var(--matrix-green-dim);
+  background: rgba(0, 10, 2, 0.85);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.1);
+}
+
+nav::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--matrix-green), 
+    transparent);
+  opacity: 0.7;
 }
 
 nav a {
   position: relative;
-  padding-bottom: 2px;
+  padding: 0.5rem 1rem;
+  color: var(--matrix-green) !important;
+  text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+  border-radius: 2px;
+  border: 1px solid transparent;
 }
 
-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
+nav a:hover, nav a.active {
+  color: var(--matrix-green-bright) !important;
+  background: rgba(0, 255, 65, 0.05);
+  border-color: var(--matrix-green-dim);
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.7);
+}
+
+/* 数字雨背景 */
+.matrix-code-bg {
+  position: fixed;
+  top: 0;
   left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--color-warm-500);
-  transition: width 0.3s ease;
-}
-
-nav a:hover::after, nav a.text-warm-500::after {
   width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
 }
 
-/* 引用和特殊文本样式 */
-.bg-warm-50 {
-  border-left: 3px solid var(--color-warm-300);
-}
-
-/* 增强页面沉浸感的装饰元素 */
-header::before {
-  content: '';
+.matrix-code-bg span {
   position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--color-warm-400), transparent);
+  display: block;
+  color: var(--matrix-green);
+  font-size: 20px;
+  white-space: nowrap;
+  opacity: 0.8;
+  transform: translateY(-100%);
+  text-shadow: 0 0 2px var(--matrix-green);
+  animation-name: matrixRain;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
-/* 动画效果 */
+@keyframes matrixRain {
+  0% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(1500%);
+    opacity: 0;
+  }
+}
+
+/* 终端打字动画 */
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid var(--matrix-green);
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--matrix-green) }
+}
+
+/* 滚动动画 */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(20px);
@@ -129,58 +272,226 @@ header::before {
   transform: translateY(0);
 }
 
-/* 页面加载动画 */
-body.loaded header h1 {
-  animation: fadeInUp 0.8s ease forwards 0.2s;
+/* 矩阵风格链接 */
+a.matrix-link {
+  color: var(--matrix-green);
+  text-decoration: none;
+  padding: 0.2em 0.4em;
+  border: 1px solid var(--matrix-green-dim);
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  transition: all 0.3s;
 }
 
-body.loaded header p {
-  animation: fadeInUp 0.8s ease forwards 0.4s;
+a.matrix-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--matrix-green);
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 0.3s;
+  z-index: -1;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+a.matrix-link:hover {
+  color: black;
+  border-color: var(--matrix-green);
+}
+
+a.matrix-link:hover::before {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* 矩阵故障效果 */
+.glitch {
+  position: relative;
+  text-shadow: 0.05em 0 0 rgba(255,0,0,.75), -0.025em -0.05em 0 rgba(0,255,0,.75), 0.025em 0.05em 0 rgba(0,0,255,.75);
+  animation: glitch 500ms infinite;
+}
+
+.glitch span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.glitch span:first-child {
+  animation: glitch 650ms infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate(-0.025em, -0.0125em);
+  opacity: 0.8;
+}
+
+.glitch span:last-child {
+  animation: glitch 375ms infinite;
+  clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+  transform: translate(0.0125em, 0.025em);
+  opacity: 0.8;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 rgba(255,0,0,.75), -0.05em -0.025em 0 rgba(0,255,0,.75), 0.025em 0.05em 0 rgba(0,0,255,.75);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  14% {
+    text-shadow: 0.05em 0 0 rgba(255,0,0,.75), -0.05em -0.025em 0 rgba(0,255,0,.75), 0.025em 0.05em 0 rgba(0,0,255,.75);
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 rgba(255,0,0,.75), 0.025em 0.025em 0 rgba(0,255,0,.75), -0.05em -0.05em 0 rgba(0,0,255,.75);
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 rgba(255,0,0,.75), 0.025em 0.025em 0 rgba(0,255,0,.75), -0.05em -0.05em 0 rgba(0,0,255,.75);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 rgba(255,0,0,.75), 0.05em 0 0 rgba(0,255,0,.75), 0 -0.05em 0 rgba(0,0,255,.75);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 rgba(255,0,0,.75), 0.05em 0 0 rgba(0,255,0,.75), 0 -0.05em 0 rgba(0,0,255,.75);
+  }
+  100% {
+    text-shadow: -0.025em 0 0 rgba(255,0,0,.75), -0.025em -0.025em 0 rgba(0,255,0,.75), -0.025em -0.05em 0 rgba(0,0,255,.75);
   }
 }
 
-/* 点击波纹效果 */
-.ripple {
+/* 卡片闪烁效果 */
+.flicker {
+  animation: flicker 2s linear infinite;
+}
+
+@keyframes flicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: .99;
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.5;
+  }
+}
+
+/* 控制台风格列表 */
+ul.console-list {
+  list-style-type: none;
+  padding-left: 1.2em;
+}
+
+ul.console-list li {
+  position: relative;
+  margin-bottom: 0.5em;
+}
+
+ul.console-list li::before {
+  content: ">";
+  position: absolute;
+  left: -1.2em;
+  color: var(--matrix-green-bright);
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: var(--matrix-black);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--matrix-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--matrix-green-dim);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--matrix-green);
+}
+
+/* 下划线链接效果 */
+.underline-link {
   position: relative;
   overflow: hidden;
 }
 
-.ripple::after {
+.underline-link::after {
   content: '';
   position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
+  height: 1px;
+  background-color: var(--matrix-green);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.underline-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* 矩阵加载动画 */
+.matrix-loader {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.matrix-loader::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
-  background: rgba(253, 186, 116, 0.3);
-  border-radius: 50%;
-  transform: scale(0);
-  animation: ripple 0.6s ease-out;
+  width: 100%;
+  background: linear-gradient(90deg, var(--matrix-green) 70%, transparent);
+  animation: matrixLoad 2s infinite;
 }
 
-@keyframes ripple {
-  to {
-    transform: scale(2);
-    opacity: 0;
-  }
+@keyframes matrixLoad {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
-/* 返回顶部按钮样式 */
-.back-to-top {
-  transition: all 0.3s ease;
+/* 矩阵按钮样式 */
+.matrix-btn {
+  background: transparent;
+  color: var(--matrix-green);
+  border: 1px solid var(--matrix-green-dim);
+  outline: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
 }
 
-.back-to-top:hover {
-  transform: translateY(-3px) !important;
-  box-shadow: 0 6px 12px rgba(234, 88, 12, 0.4);
+.matrix-btn:hover {
+  color: black;
+  border-color: var(--matrix-green);
+}
+
+.matrix-btn::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background-color: var(--matrix-green);
+  z-index: -1;
+  transition: all 0.3s;
+}
+
+.matrix-btn:hover::before {
+  width: 100%;
 }
 
 /* 响应式调整 */
@@ -200,68 +511,33 @@ body.loaded header p {
   }
 }
 
-/* 图片样式 */
-img {
-  max-width: 100%;
-  border-radius: 0.5rem;
-  transition: transform 0.3s ease;
-}
-
-img:hover {
-  transform: scale(1.02);
-}
-
-/* 自定义滚动条 */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-warm-50);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-warm-300);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-warm-400);
-}
-
-/* 工具卡片悬停效果 */
-.grid a {
-  transition: all 0.3s ease;
-  border: 1px solid transparent;
-}
-
-.grid a:hover {
-  transform: translateY(-3px);
-  border-color: var(--color-warm-200);
-  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.1);
-}
-
-/* 自定义选择文本样式 */
+/* 黑客帝国风格选择文本样式 */
 ::selection {
-  background-color: var(--color-warm-200);
-  color: var(--color-warm-800);
+  background-color: var(--matrix-green-dim);
+  color: white;
 }
 
-/* 引用卡片样式 */
-.bg-gradient-to-r {
-  transition: all 0.3s ease;
+/* 底部版权信息矩阵风格 */
+footer {
+  border-top: 1px dashed var(--matrix-green-dim);
 }
 
-.bg-gradient-to-r:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(234, 88, 12, 0.1);
+footer p {
+  font-family: 'Share Tech Mono', monospace;
+  letter-spacing: 1px;
 }
 
-/* 社交图标悬停效果 */
-footer a {
-  transition: all 0.3s ease;
+/* 自定义背景效果 */
+.matrix-container {
+  position: relative;
+  z-index: 1;
 }
 
-footer a:hover {
-  transform: translateY(-3px);
+/* 矩阵雨光标样式 */
+body {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2300ff41' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 3l7 7m0 0V4m0 6h-6'/%3E%3C/svg%3E"), auto;
+}
+
+a, button {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2300ff41' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/%3E%3C/svg%3E"), pointer;
 } 
